@@ -1,22 +1,30 @@
 # README
 
-For this challenge, we would like you to build a simple API that can return information for a `Title`.
+For this challenge, we would like you to build a simple API that can return information about films in a store.
 
-The second step is to connect the API to the React based front endpoint
+The second step is to connect the API to the React based front end.
 
 # Getting started
 
+This project uses Ruby 2.5.1 and Yarn.
+
 1. Install ruby dependancies with `bundle install`
 2. Install JS dependancies with `yarn`
-3. Run the webserver `bundle exec rails c`
+3. Run the webserver `bundle exec rails s`
 4. Run the webpack dev server: `./bin/webpack-dev-server`
 5. Access the web application: `http://localhost:3000`
 
+Tests are inside `/specs`
+
+You can run them all by running `rspec`
+
 # Step 1: Build API
 
-A `Title` is represents a movie on a digital storefront or Platform, like Itunes, that has a number of purchase options, known as `Offer`s.
+A `Title` represents a movie on a digital storefront or Platform, like Itunes, that has a number of purchase options, known as `Offer`s.
 
 Create an endpoint that will return the JSON representation of a `Title`, given a `Title` `ID`. The response format should follow the [JSON API spec](http://jsonapi.org/examples/)
+
+The `Title` and `Offer` classes have already been defined and both include a DATA constant that contains the data about each record.
 
 `/titles/101`
 
@@ -124,6 +132,13 @@ On this page, you can type a Title ID, and press submit, and the system page wil
 However, right now the data is hardcoded with dummy data, and doesn't use the API.
 
 We'd like you to finish off our work and connect the React components to the API.
+
+Things to keep in mind:
+
+* What happens if there's an error?
+* We're using react-hot-loader to update the client when you make any changes to the react components.
+  * Make sure you are running `webpack-dev-server` running.
+  * It's not guaranteed to work!
 
 
 # Notes
