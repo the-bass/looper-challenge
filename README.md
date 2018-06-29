@@ -40,12 +40,14 @@ The `Title` and `Offer` classes have already been defined and both include a DAT
       "licenses": ["buy", "rent"]
     },
     "relationships": {
-      "offers": [
-        { "id": 101, "type": "offer" },
-        { "id": 102, "type": "offer" },
-        { "id": 103, "type": "offer" },
-        { "id": 104, "type": "offer" }
-      ]
+      "offers": {
+        "data": [
+          { "id": 101, "type": "offer" },
+          { "id": 102, "type": "offer" },
+          { "id": 103, "type": "offer" },
+          { "id": 104, "type": "offer" }
+        ]
+      }
     }
   }
 }
@@ -53,7 +55,7 @@ The `Title` and `Offer` classes have already been defined and both include a DAT
 
 JSON API allows you to include related entities, so the following request should return the following response:
 
-`/titles/101?include=offer`
+`/titles/101?include=offers`
 
 ```json
 {
@@ -67,12 +69,14 @@ JSON API allows you to include related entities, so the following request should
       "licenses": ["buy", "rent"]
     },
     "relationships": {
-      "offers": [
-        { "id": 101, "type": "offer" },
-        { "id": 102, "type": "offer" },
-        { "id": 103, "type": "offer" },
-        { "id": 104, "type": "offer" }
-      ]
+      "offers": {
+        "data": [
+          { "id": 101, "type": "offer" },
+          { "id": 102, "type": "offer" },
+          { "id": 103, "type": "offer" },
+          { "id": 104, "type": "offer" }
+        ]
+      }
     }
   },
   "included": [
@@ -142,7 +146,7 @@ Things to keep in mind:
 
 
 # Notes
-* You can use any gems that you like, but don't use any library that actually solves the problem itself.
+* You can use any gems that you like, but don't use any library that actually solves the problem itself (e.g. `jsonapi-resources` or `fast-jsonapi` or `active_model_serializers`)
 * This shouldn't take more than a few hours. If you don't have time to complete it, don't worry - we're much more interested in how you approach the problem.
 * If you want to provide more background on how you would have completed the problem, or any other notes, please put them in a NOTES.md file at the root of the project.
 
