@@ -1,4 +1,6 @@
 class Title
+  include Pryable
+
   DATA = [
     {
       id: 101,

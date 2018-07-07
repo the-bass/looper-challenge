@@ -1,4 +1,6 @@
 class Offer
+  include Pryable
+
   DATA = [
     {
       id: 101,
